@@ -2,6 +2,7 @@ import {NavLink} from "react-router-dom";
 import ResultItem from "./ResultItem/ResultItem";
 import classes from './Result.module.css'
 import React, {Component} from 'react';
+import ReactToPrint, { PrintContextConsumer } from 'react-to-print';
 
 class ResultClass extends Component {
 
@@ -87,4 +88,22 @@ class ResultClass extends Component {
     }
 }
 
-export default ResultClass;
+
+class Example extends React.Component {
+    render() {
+        return (
+            <div>
+                <ReactToPrint content={() => this.componentRef}>
+                    <PrintContextConsumer>
+                        {({ handlePrint }) => (
+                            <button onClick={handlePrint}>Print this out!</button>
+                        )}
+                    </PrintContextConsumer>
+                </ReactToPrint>
+                <ResultClass {...this.props} ref={el => (this.componentRef = el)} />
+            </div>
+        );
+    }
+}
+
+export default Example

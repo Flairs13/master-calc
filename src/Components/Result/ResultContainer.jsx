@@ -2,6 +2,7 @@
 import {connect} from "react-redux";
 import {defaultState, setDiscountedValue, setTotal} from "../../Redux/Main-page-reducer";
 import ResultClass from "./ResultClass";
+import Example from "./ResultClass";
 
 
 const mapStateToProps = (state) => {
@@ -14,4 +15,4 @@ const mapStateToProps = (state) => {
     }
 }
 
- export const ResultContainer = connect(mapStateToProps,{defaultState,setTotal,setDiscountedValue})(ResultClass)
+ export const ResultContainer = connect(mapStateToProps,{defaultState,setTotal,setDiscountedValue})(Example)
