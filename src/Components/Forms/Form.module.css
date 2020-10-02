@@ -1,0 +1,82 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.selects {
+    display: flex;
+    flex-direction: column;
+}
+
+.formWrapper {
+    margin-top: 30px;
+}
+
+.tableWrapper {
+    width: 100%;
+
+}
+
+.tableWrapper  {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tableWrapper > tr >  td {
+    border: 1px solid black;
+}
+.tableWrapper > tr > th{
+    border: 1px solid black;
+}
+
+.totalWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.totalWrapper span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.totalWrapper div {
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+
+.btnClear {
+    margin-left: 50px;
+
+}
+
+.btnCalc {
+    width: 250px;
+    height: 50px;
+}
+
+
+@media (max-width: 700px) {
+    .totalWrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .btnWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnClear {
+        margin-left: 0;
+        width: 100%;
+
+    }
+
+    .btnCalc {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
