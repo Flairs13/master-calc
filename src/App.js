@@ -11,7 +11,7 @@ function App () {
     return (
         <BrowserRouter>
             <div className={classes.container}>
-                <Route exact path="/react-deploy">
+                <Route exact path="/master-calc">
                     <OrderDataContainer/>
                     <FormsContainer/>
                 </Route>
