@@ -61,7 +61,7 @@ let initialState = {
             id: 6, option: [
                 {value: 'Сучара', prices: 5000}, {value: 'Пидор', prices: 4000}, {value: 'Хуила', prices: 3000},
                 {value: 'Рукоблуд', prices: 2000}
-            ], name: 'Pidors', amount: '', value: '', label: '----------Пидорс----------',
+            ], name: 'Pidors', amount: '', value: '', label: '----------Помидоры----------',
         },
 
     ],
