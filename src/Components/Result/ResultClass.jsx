@@ -44,7 +44,6 @@ class ResultClass extends Component {
 
         return (
             <div className={classes.container}>
-                <h1>Расчетный лист ТАК ТО</h1>
                 <div className={classes.tableGrid}>
                     <span className={classes.tableNumber}>Номер заказа</span>
                     <span className={classes.tableData}>Дата заказа</span>
@@ -91,15 +90,16 @@ class ResultClass extends Component {
 
 class Example extends React.Component {
     render() {
-        return (
+        return  (
             <div>
-                <ReactToPrint content={() => this.componentRef}>
-                    <PrintContextConsumer>
-                        {({ handlePrint }) => (
-                            <button onClick={handlePrint}>Print this out!</button>
-                        )}
-                    </PrintContextConsumer>
-                </ReactToPrint>
+                <ReactToPrint
+                    trigger={() => {
+                        // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+                        // to the root node of the returned component as it will be overwritten.
+                        return <div className={classes.container}><a className={classes.linkPdf} href="#"><h1>Расчетный лист</h1></a></div>;
+                    }}
+                    content={() => this.componentRef}
+                />
                 <ResultClass {...this.props} ref={el => (this.componentRef = el)} />
             </div>
         );
