@@ -44,6 +44,7 @@ const FormsList = (props) => {
                                                    id={i.id}
                                                    setSelectValue={props.setSelectValue}
                                                    selectLabel={props.selectValue}
+                                                   setSumValue={props.setSumValue}
                                     />
         )
     }
@@ -80,11 +81,12 @@ const FormsList = (props) => {
                 <table className={classes.tableWrapper}>
                     <tr>
                         <th>Список работ</th>
+                        <th>Сумма</th>
                         <th>Кол-во</th>
                     </tr>
                     {createSelect ()}
                     <tr>
-                        <td colSpan={2}>
+                        <td colSpan={3}>
                             <Select styles={customStyles} isClearable={true} options={props.discounts.options} value={props.discounts} onChange={handleDiscounts}/>
                         </td>
                     </tr>

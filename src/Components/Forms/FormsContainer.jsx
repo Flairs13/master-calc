@@ -1,6 +1,6 @@
 import Forms from "./Forms";
 import {connect} from "react-redux";
-import {defaultForms, setAmount, setDiscounts, setResult, setSelectValue} from "../../Redux/Main-page-reducer";
+import {defaultForms, setAmount, setDiscounts, setResult, setSelectValue, setSumValue} from "../../Redux/Main-page-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -10,4 +10,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export const FormsContainer = connect(mapStateToProps,{setResult,setAmount,defaultForms,setSelectValue,setDiscounts})(Forms)
+export const FormsContainer = connect(mapStateToProps,{setResult,setAmount,defaultForms,setSelectValue,setDiscounts,setSumValue})(Forms)

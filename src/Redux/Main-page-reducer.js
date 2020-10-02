@@ -7,6 +7,7 @@ const SET_SELECT_VALUE = 'SET_SELECT_VALUE'
 const SET_TOTAL = 'SET_TOTAL'
 const SET_DISCOUNTS = 'SET_DISCOUNTS'
 const SET_DISCOUNTED_VALUE = 'SET_DISCOUNTED_VALUE'
+const SET_SUM_VALUE = 'SET_SUM_VALUE'
 
 
 let initialState = {
@@ -18,18 +19,11 @@ let initialState = {
         valueConfiguration: '',
         valueDefect: '',
     },
-    // selectValue:   {
-    //     id: 1, option: [
-    //         {value: 'Windows 10', prices: 5000}, {value: 'Windows 8', prices: 4000}, {value: 'Windows 7', prices: 3000},
-    //         {value: 'Windows XP', prices: 2000}
-    //     ], name: 'Windows', amount: '', value: '', label: 'Выбери Windows',
-    // },
-
 
     listWorks: [
         {
             id: 1, option: [
-                {value: 'Windows 10', prices: 5000}, {value: 'Windows 8', prices: 4000}, {value: 'Windows 7', prices: 3000},
+                {value: 'Windows 10 50', prices: 5000}, {value: 'Windows 8', prices: 4000}, {value: 'Windows 7', prices: 3000},
                 {value: 'Windows XP', prices: 2000}
             ], name: 'Windows', amount: '', value: '', label: '----------Windows----------',
         },
@@ -140,6 +134,18 @@ const mainPageReducer = (state = initialState, action) => {
             }
         }
 
+
+        case SET_SUM_VALUE: {
+            return {
+                ...state,
+                listWorks: [
+                    ...state.listWorks.slice (0, lw), {...state.listWorks[lw], option: [...state.listWorks[lw].option], value: action.value},
+                    ...state.listWorks.slice (lw + 1),
+                ]
+            }
+
+        }
+
         case DEFAULT_STATE: {
             return initialState
         }
@@ -164,6 +170,7 @@ export const setSelectValue = (label,value) => ({type: SET_SELECT_VALUE, label,v
 export const setTotal = (value) => ({type: SET_TOTAL,value})
 export const setDiscounts = (value, label) => ({type: SET_DISCOUNTS, value,label})
 export const setDiscountedValue = (value) => ({type: SET_DISCOUNTED_VALUE, value})
+export const setSumValue = (value,id) => ({type: SET_SUM_VALUE, value, id})
 export const defaultState = () => ({type: DEFAULT_STATE})
 export const defaultForms = () => ({type: DEFAULT_FORMS})
 

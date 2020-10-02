@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './FormItem.module.css'
 import FormItemAmount from "./Form-item-amount";
 import CreatableSelect from 'react-select/creatable';
+import FormItemSum from "./Form-item-sum";
 
 const FormItem = (props) => {
 
@@ -41,6 +42,7 @@ const FormItem = (props) => {
                 <CreatableSelect defaultValue={props.name} styles={customStyles}  isClearable={true}  value={props}  options={createOption ()} className={classes.selectItem} onChange={onChange}/>
 
             </td>
+            <FormItemSum id={props.id} value={props.value} setSumValue={props.setSumValue}/>
             <FormItemAmount selectValue={props.selectValue} value={props.amount} name={props.name} setAmount={props.setAmount} id={props.id}/>
         </tr>
     );

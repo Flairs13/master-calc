@@ -79,7 +79,7 @@ class ResultClass extends Component {
                     <div>Итого <span>{this.props.discounts.discountedValue}</span>руб</div>
                 </div>
 
-                <NavLink to={'/react-deploy'}>
+                <NavLink to={"/master-calc"}>
                     <button className={classes.btn} onClick={this.props.defaultState}>Расчитать снова</button>
                 </NavLink>
             </div>
